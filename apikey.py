@@ -1,1 +1,1 @@
-openai_key = 'sk-proj-zIvrtEmwQFRHrQGjInq3T3BlbkFJTVCogjtCviuJiUAPX0HM'
+openai_key = '' #enter ur openai key here

@@ -6,12 +6,11 @@ from langchain.prompts import PromptTemplate
 from langchain.chains import LLMChain, SequentialChain
 from apikey import openai_key
 #apikey.py is my file for storing my openai api secret key
-# create your own key and store it in that file
 st.title("Name Generator")
 start = st.text_input("Enter start letter")
 end = st.text_input("Enter last letter")
 
-os.environ['OPENAI_API_KEY'] = openai_key #openai key here
+os.environ['OPENAI_API_KEY'] = '' #add your openai key here
 llm = OpenAI(temperature=0.6)
 
 def generate_name(start, end):
@@ -40,4 +39,7 @@ if start and end and len(start)==1 and len(end)==1:
         st.header(response['name'])
         fnames = response['fname'].split(",")
         
-      
+        for item in fnames:
+            st.write(item)
+else:
+     st.write("**Enter valid inputs**")            
